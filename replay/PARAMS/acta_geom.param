@@ -1,0 +1,4 @@
+; Active Analyzer GEOMETRY PARAMETER FILE
+
+; Number of PMTs
+hcer_tot_pmts = 32
