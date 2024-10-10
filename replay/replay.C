@@ -1,4 +1,6 @@
 void replay(Int_t RunNumber=0, Int_t MaxEvent=0){
+
+  gSystem->Load("libSRO");
   const char* RunFileNamePattern="test_nim_trigger_%d.evio.0";
   vector<string> pathList;
   pathList.push_back("/data/SRO");
@@ -13,6 +15,7 @@ void replay(Int_t RunNumber=0, Int_t MaxEvent=0){
 
   // Load fadc debug parameters
   gHcParms->Load("PARAM/debug.param");
+
 
   //Add SRO spectrometer apparatus
   THaApparatus* SRO = new THcSROApparatus("SRO","SRO");
