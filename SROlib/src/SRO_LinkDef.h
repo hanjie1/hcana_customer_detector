@@ -4,8 +4,8 @@
 #pragma link off all classes;
 #pragma link off all functions;
 
-#pragma link C++ class THcSROApparatus.cxx+;
-#pragma link C++ class THcActiveAnalyzerHit.cxx+;
-#pragma link C++ class THcActiveAnalyzer.cxx+;
+#pragma link C++ class THcSROApparatus+;
+#pragma link C++ class THcActiveAnalyzerHit+;
+#pragma link C++ class THcActiveAnalyzer+;
 
 #endif

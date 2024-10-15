@@ -1,0 +1,8 @@
+[ libSRO.so ]
+# List of selected classes
+class THcActiveAnalyzer
+class THcActiveAnalyzerHit
+class THcSROApparatus
+header THcActiveAnalyzer.h
+header THcActiveAnalyzerHit.h
+header THcSROApparatus.h

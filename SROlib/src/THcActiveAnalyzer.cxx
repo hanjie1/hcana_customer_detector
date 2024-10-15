@@ -228,7 +228,7 @@ Int_t THcActiveAnalyzer::ReadDatabase( const TDatime& date )
 
   Bool_t optional = true;
 
-  cout << "Created Cherenkov detector " << GetApparatus()->GetName() << "."
+  cout << "Created a detector " << GetApparatus()->GetName() << "."
        << GetName() << " with " << fNelem << " PMTs" << endl;
 
   // 6 GeV pedestal paramters
@@ -399,7 +399,7 @@ void THcActiveAnalyzer::Clear(Option_t* opt)
 }
 
 //_____________________________________________________________________________
-Int_t THcActiveAnalyzer::Decode( const THaEvData& evdata )
+Int_t THcActiveAnalyzer::Decode( THaEvData& evdata )
 {
   // Get the Hall C style hitlist (fRawHitList) for this event
   Bool_t present = kTRUE;	// Suppress reference time warnings
@@ -408,7 +408,17 @@ Int_t THcActiveAnalyzer::Decode( const THaEvData& evdata )
   }
   // THcHallCSpectrometer *app = dynamic_cast<THcHallCSpectrometer*>(GetApparatus());
    // cout << "Cerenkov  Event num = " << evdata.GetEvNum() << " spec = " << app->GetName() << " det = "  << GetName()<< endl;
+
+ // Define the analysis debug output
+ auto *debugfile = new ofstream;
+ debugfile->open ("debug_replay.txt");
+
+ evdata.SetDebug(1);
+ evdata.SetDebugFile(debugfile);
+ cout<<"1111"<<endl;
+
  fNhits = DecodeToHitList(evdata, !present);
+ cout<<"2222"<<endl;
   if(gHaCuts->Result("Pedestal_event")) {
     AccumulatePedestals(fRawHitList);
     fAnalyzePedestals = 1;	// Analyze pedestals first normal events

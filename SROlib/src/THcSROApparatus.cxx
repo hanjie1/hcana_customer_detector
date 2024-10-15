@@ -52,6 +52,7 @@ All the parameters read by this apparatus are prefixed with the returned string.
 #include "THcGlobals.h"
 #include "THcParmList.h"
 
+#define WITH_DEBUG
 #ifdef WITH_DEBUG
 #include <iostream>
 #endif

@@ -23,7 +23,7 @@ class THcActiveAnalyzer : public THaNonTrackingDetector, public THcHitList {
   virtual void    Print(const Option_t* opt) const;
   virtual void    AccumulatePedestals(TClonesArray* rawhits);
   virtual void    CalculatePedestals();
-  virtual Int_t   Decode(const THaEvData&);
+  virtual Int_t   Decode(THaEvData&);
   virtual Int_t   ReadDatabase(const TDatime& date);
   virtual Int_t   DefineVariables(EMode mode = kDefine);
   virtual Int_t   CoarseProcess(TClonesArray& tracks);
